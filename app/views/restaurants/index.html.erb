@@ -1,0 +1,25 @@
+<div class="restaurant-box">
+  <h1>Restaurants#index</h1>
+  <%=link_to 'add restaurant', new_restaurant_url, class: 'add-btn btn btn-primary'%>
+  <%@restaurants.each do |restaurant|%>
+    <div class="restaurant-card">
+      <div class="jumbotron">
+        <h1 class="display-4 name">
+          <%= restaurant.name %>
+          <%=link_to 'show', restaurant_url(restaurant), class: 'btn btn-primary'%>
+        </h1>
+        <p class="lead">
+          address: <i class="address"><%= restaurant.address %></i><br>
+          contact: <i class="contact"><%= restaurant.phone_number %></i><br>
+          category: <strong class="category"><%= restaurant.category.capitalize %></strong>
+        </p>
+        <hr class="my-4">
+        <br>
+        <div class="review-box">
+          <div class="average-reviews btn btn-success">Avg rating: <%=@avg_review%></div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+<%# new_review_restaurants_url(restaurant) %>

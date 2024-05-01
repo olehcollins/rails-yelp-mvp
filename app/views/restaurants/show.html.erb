@@ -1,0 +1,68 @@
+<%restaurant = @restaurant%>
+<%restaurant = @restaurant%>
+
+<%# RESTAURANT%>
+<div class="restaurant-box">
+  <h1>Restaurants#show</h1>
+  <div class="restaurant-card">
+    <div class="jumbotron">
+      <h1 class="display-4 name">
+        <%= restaurant.name %>
+        <%=link_to 'back to restaurants', restaurants_url, class: 'btn btn-danger'%>
+      </h1>
+      <p class="lead">
+        address: <i class="address"><%= restaurant.address %></i><br>
+        contact: <i class="contact"><%= restaurant.phone_number %></i><br>
+        category: <strong class="category"><%= restaurant.category.capitalize %></strong>
+      </p>
+      <hr class="my-4">
+      <br>
+      <div class="review-box">
+        <div class="average-reviews btn btn-success">Avg rating: <%=@avg_review%></div>
+      </div>
+    </div>
+  </div>
+</div>
+<%# RESTAURANT END%>
+
+
+<%# REVIEWS FORM START%>
+<div class="review-form">
+  <h1>Add review</h1>
+  <div class="rating-form">
+
+  <%= simple_form_for [@restaurant, @review] do |f|%>
+    <div class="form-div col-7">
+      <%= f.select :rating, options_for_select(0..5), { prompt: "Select a rating" }, class: "form-control mt-4", required: true %>
+
+      <%= f.input :content, class: "form-control", placeholder: 'content', required: true, prompt: "enter content" %>
+
+      <div class="form-btns">
+        <%=f.submit 'Submit', class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+
+<%# REVIEW FORM END %>
+
+
+<%# REVIEWS START%>
+<div class="review-box">
+  <h1>Reviews</h1>
+
+  <%@reviews.each do |review|%>
+    <div class="review-card">
+      <div class="jumbotron">
+        <h1 class="display-4 rating">
+          Rating: <%= review.rating %>
+        </h1>
+        <hr class="my-4">
+        <p class="lead">
+          <strong>content: </strong><i class="content"><%= review.content %></i><br>
+        </p>
+      </div>
+    </div>
+  <%end%>
+</div>

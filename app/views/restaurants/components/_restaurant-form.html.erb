@@ -1,0 +1,19 @@
+<div class="form">
+  <%= simple_form_for (restaurant) do |f|%>
+    <div class="form-div col-7">
+      <%= f.input :name, class: "form-control", placeholder: 'name', required: true, prompt: "enter name" %>
+
+      <%= f.input :address, class: "form-control", placeholder: 'address', required: true, prompt: "enter address" %>
+
+      <%= f.input :phone_number, class: "form-control", placeholder: 'contact', required: true, prompt: "enter contact" %>
+
+      <%= f.select :category, ["chinese", "italian", "japanese", "french", "belgian"], { prompt: "Select a cuisine" }, class: "form-control mt-4", required: true %>
+
+      <div class="form-btns">
+        <%= f.submit "Save", class: "btn btn-primary"%>
+        <%= link_to "Back to list", restaurants_url, class: "btn btn-danger back-link"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= stylesheet_link_tag "components/restaurant-form", "data-turbo-track": "reload" %>

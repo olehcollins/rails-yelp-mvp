@@ -1,0 +1,17 @@
+.rating-form {
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.form-div {
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  border: 1px solid pink;
+  padding: 4rem;
+}
+
+.form-btns {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}

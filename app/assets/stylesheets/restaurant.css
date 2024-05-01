@@ -1,0 +1,65 @@
+.restaurant-box,
+.review-box,
+.review-form,
+.new-restaurant {
+  font-size: 1.5rem;
+  margin-left: 3rem;
+  margin-top: 4rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  .add-btn {
+    margin-left: 3rem;
+  }
+}
+
+.restaurants-link {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.restaurants-link:hover {
+  color: red;
+}
+
+.jumbotron {
+  margin-left: 3rem;
+  margin-top: 4rem;
+  padding: 1rem;
+  margin-top: 4rem;
+  border: 1px solid pink;
+  border-radius: 1rem;
+  width: 40rem;
+
+  .name,
+  .rating {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      display: inherit;
+      width: 7rem;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .address,
+  .contact {
+    color: blue;
+  }
+  .category {
+    color: red;
+  }
+
+  .review-box {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*=================New Restauant===========================*/

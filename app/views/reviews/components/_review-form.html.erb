@@ -1,0 +1,14 @@
+<div class="rating-form">
+  <%= simple_form_for @review do |f|%>
+    <div class="form-div col-7">
+      <%= f.select :rating, options_for_select(0..5), { prompt: "Select a rating" }, class: "form-control mt-4", required: true %>
+
+      <%= f.input :content, class: "form-control", placeholder: 'content', required: true, prompt: "enter content" %>
+
+      <div class="form-btns">
+        <%=link_to 'Save', restaurant_reviews_url(restaurant), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= stylesheet_link_tag "components/review-form", "data-turbo-track": "reload" %>
